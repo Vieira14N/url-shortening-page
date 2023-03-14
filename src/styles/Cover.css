@@ -1,0 +1,46 @@
+section {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 100px;
+}
+
+.text {
+    width: 60%;
+}
+
+section h1{
+    color: hsl(255, 11%, 22%);
+    font-size: 72px;
+    line-height: 82px;
+    letter-spacing: -2px;
+}
+
+section p {
+    color: hsl(257, 7%, 63%);
+    font-size: 18px;
+}
+
+section button {
+    background-color: hsl(180, 66%, 49%);
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    padding: 8px 24px;
+    margin-top: 30px;
+}
+
+section button:hover{
+    background-color: hsla(180, 66%, 49%,0.6);
+    cursor: pointer;
+}
+
+section img {
+    position: absolute;
+    top:-50px;
+    right: -260px;
+    width: 600px;
+}
