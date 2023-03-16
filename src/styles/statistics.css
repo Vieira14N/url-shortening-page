@@ -1,6 +1,6 @@
 .statistics-section{
     background-color: hsl(225, 33%, 95%);
-    padding-top: 60px;
+    padding: 60px 0;
     display: flex;
     justify-content: center;
     align-items: center;

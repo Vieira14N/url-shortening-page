@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Cover from './components/Cover'
 import Shorten from './components/Shorten'
 import Statistics from './components/Statistics';
+import CTA from './components/CTA';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Cover/>
       <Shorten/>
       <Statistics/>
+      <CTA/>
+      <Footer/>
     </>
   );
 }
