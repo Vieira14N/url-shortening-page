@@ -41,11 +41,15 @@
     border-radius: 5px;
 }
 
-.link-container {
+.link-container{
+    width: 75%;
+}
+
+.link-container .link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 75%;
+    width: 100%;
     height: fit-content;
     padding: 15px 30px;
     background-color: white;
@@ -53,7 +57,7 @@
     margin-top: 20px;
 }
 
-.link-container p{
+.link-container .link p{
     margin: 0;
     font-size: 20px;
     color: black;
@@ -64,7 +68,7 @@
     align-items: center;
 }
 
-.link-container div p{
+.link-container .link div p{
     color: hsl(180, 66%, 49%);
     margin-right: 10px;
 }

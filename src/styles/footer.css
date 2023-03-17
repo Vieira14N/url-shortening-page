@@ -15,8 +15,6 @@ footer {
 
 .footer-container .logo {
     align-self: flex-start;
-    fill: white;
-    background-color: aliceblue;
 }
 
 .footer-info {
@@ -53,7 +51,11 @@ footer {
     list-style: none;
 }
 
-.footer-info img {
+.footer-info svg {
     align-self: flex-start;
     margin-right: 20px;
+}
+
+.footer-info svg path:hover{
+    fill: hsl(180, 66%, 49%);
 }
