@@ -1,29 +1,45 @@
-import { useState, useEffect } from 'react'
+import React from 'react'
 import '../styles/shorten.css'
 
 export default function Shorten() {
 
-  const [shortLink, setShortLink] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`)
-      .then(response => response.json())
-      .then(json => setShortLink(json))
-  }, []);
+  async function onFetch(url) {
+    const response = await fetch(url)
+    const json = await response.json()
+    return json
+  }
 
   function createLink() {
-    const shorten = shortLink.result.short_link
     const input = document.querySelector('input')
     const container = document.querySelector('.link-container')
     const link = document.createElement('div')
-    link.innerHTML = `<p>${input.value}</p>
-                      <div>
-                        <p>${shorten}</p>
-                        <button>Copy</button>
-                      </div>`
+    const shortLink = onFetch(`https://api.shrtco.de/v2/shorten?url=${input.value}`)
+    shortLink.then(response => {
+      link.innerHTML = `<p>${input.value}</p>
+      <div>
+         <p>${response.result.short_link}</p>
+        <button>Copy</button>
+      </div>`
+    })
     link.classList.add('link')
     container.appendChild(link)
+
+    const copyBtn = document.querySelectorAll('.link')
+
+    copyBtn.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if(e.target.localName === "button"){
+            const copyText = e.target.previousElementSibling.textContent
+            navigator.clipboard.writeText(copyText)
+            e.target.innerHTML = 'Copied!'
+        }
+      })
+    })
+
+    
   }
+
+
 
   return (
     <section className='shorten-section'>
@@ -37,13 +53,7 @@ export default function Shorten() {
       </div>
       <div className='link-container'>
 
-        <div className='link'>
-          <p>https://www.google.com</p>
-          <div>
-            <p>https://auaauhuau.bit</p>
-            <button>Copy</button>
-          </div>
-        </div>
+
 
       </div>
     </section>
