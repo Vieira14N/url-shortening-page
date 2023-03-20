@@ -45,6 +45,10 @@
     width: 75%;
 }
 
+.active, .active:hover{
+    background-color: hsl(257, 27%, 26%);
+}
+
 .link-container .link {
     display: flex;
     justify-content: space-between;
@@ -76,4 +80,40 @@
 .link-container button{
     margin: 0;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 500px){
+    .input-container{
+        flex-wrap: wrap;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .input-container .input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .link-container{
+        width: 90%;
+    }
+
+    .link-container .link{
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .link-container .link p{
+        margin-bottom: 20px;
+    }
+
+    .link-container .link div {
+        width: 100%;
+        flex-wrap: wrap;
+        border-top: 1px solid hsla(257, 7%, 63%, 0.3);
+    }
+
+    .link-container .link div p {
+        padding-top: 20px;
+    }
 }

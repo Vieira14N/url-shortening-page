@@ -28,18 +28,15 @@ export default function Shorten() {
 
     copyBtn.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if(e.target.localName === "button"){
-            const copyText = e.target.previousElementSibling.textContent
-            navigator.clipboard.writeText(copyText)
-            e.target.innerHTML = 'Copied!'
+        if (e.target.localName === "button") {
+          const copyText = e.target.previousElementSibling.textContent
+          navigator.clipboard.writeText(copyText)
+          e.target.classList.add('active')
+          e.target.innerHTML = 'Copied!'
         }
       })
     })
-
-    
   }
-
-
 
   return (
     <section className='shorten-section'>
@@ -51,11 +48,7 @@ export default function Shorten() {
         ></input>
         <button onClick={createLink} >Shorten it!</button>
       </div>
-      <div className='link-container'>
-
-
-
-      </div>
+      <div className='link-container'></div>
     </section>
   )
 }

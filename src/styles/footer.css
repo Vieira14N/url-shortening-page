@@ -59,3 +59,26 @@ footer {
 .footer-info svg path:hover{
     fill: hsl(180, 66%, 49%);
 }
+
+@media screen and (max-width: 500px){
+    .footer-container{
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+    }
+
+    .footer-info{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .footer-info ul{
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .footer-container .logo{
+        align-self: center;
+        margin-bottom: 15px;
+    }
+}
